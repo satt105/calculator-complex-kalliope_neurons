@@ -1,0 +1,10 @@
+name: "calculator"
+type: "neuron"
+author: "corus87"
+
+kalliope_supported_version:
+    - 0.5
+    - 0.6
+
+tags:
+    - "utils"
