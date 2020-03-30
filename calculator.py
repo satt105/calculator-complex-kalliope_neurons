@@ -11,6 +11,8 @@ class Calculator(NeuronModule):
 
         self.variable_1 = kwargs.get('variable_1', None)
         self.variable_2 = kwargs.get('variable_2', None)
+        self.variableout_1 = None
+        self.variableout_2 = None
         self.operator = kwargs.get('operator', None)
         
         if self._is_parameters_ok():
@@ -47,7 +49,9 @@ class Calculator(NeuronModule):
                 solution = (("%.1f" % solution)).rstrip('0')
                 return solution
 
-            message = {"solution": calculate(self.variable_1,self.variable_2)}        
+            self.variableout_1 = self.variable_1
+            self.variableout_2 = self.variable_2
+            message = {"solution": calculate(self.variable_1,self.variable_2),"variableret_1": self.variableout_1,"variableret_2":self.variableout_2}
             self.say(message)
             
     def _is_parameters_ok(self):
