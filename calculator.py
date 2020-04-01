@@ -26,25 +26,23 @@ class Calculator(NeuronModule):
                 elif "multiply"==self.operator:   
                     solution= x * y
                 elif "divide"==self.operator:
-                    solution=float(x / y)
+                    solution=x / y
                 elif "power"==self.operator:
-                    solution =float(math.pow(x,y))
+                    solution =math.pow(x,y)
                 elif "square_root"==self.operator:
-                    solution=float(math.sqrt(x))
+                    solution=math.sqrt(x)
                 elif "arc_cosinus"==self.operator:
-                    solution=float(math.acos(x))
+                    solution=math.acos(x)
                 elif "arc_sinus"==self.operator:
-                    solution=float(math.asin(x))
+                    solution=math.asin(x)
                 elif "arc_tangente"==self.operator:
-                    solution=float(math.atan(x))
+                    solution=math.atan(x)
                 elif "cos"==self.operator:
-                    solution=float(math.cos(x))
+                    solution=math.cos(x)
                 elif "sin"==self.operator:
-                    solution=float(math.sin(x))
+                    solution=math.sin(x)
                 elif "tan"==self.operator:
-                    solution=float(math.tan(x))
-                elif "common_divisor"==self.operator:
-                    solution =float(math.gcd(x,y))
+                    solution=math.tan(x)
 
                 solution = (("%.1f" % solution)).rstrip('0')
                 return solution
@@ -72,7 +70,7 @@ class Calculator(NeuronModule):
             raise MissingParameterException("[Calculator] Variable_2 is missing")
         
         if self.operator:
-            operators = ["add", "subtract", "multiply", "divide","power","square_root","arc_cosinus","arc_sinus","arc_tangente","cos","sin","tan","common_divisor"]
+            operators = ["add", "subtract", "multiply", "divide","power","square_root","arc_cosinus","arc_sinus","arc_tangente","cos","sin","tan"]
             if self.operator not in operators:
                 raise MissingParameterException("[Calculator] %s is not a valid operator" % self.operator)
         else:

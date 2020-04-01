@@ -17,7 +17,7 @@ kalliope install --git-url https://github.com/satt105/calculator-complex-kalliop
 |-------------|----------|---------------------------------|
 | variable_1  | yes      | float                |
 | variable_2  | yes      | float                |
-| operator    | yes      | add, subtract, multiply, divide, power, square_root, arc_cosinus, arc_sinus , arc_tangente, cos, sin, tan, common_divisor |
+| operator    | yes      | add, subtract, multiply, divide, power, square_root, arc_cosinus, arc_sinus , arc_tangente, cos, sin, tan |
 
 
 ## Return values
@@ -176,16 +176,7 @@ kalliope install --git-url https://github.com/satt105/calculator-complex-kalliop
           variable_2: "{{ var2 }}"
           operator: "tan"
           say_template: "The solution is {{ solution }}"
-          
-  - name: "calculate-common_divisor"
-    signals:
-      - order: "calculate the common_divisor {{ var1 }} and {{ var2 }} "
-    neurons:
-      - calculator:
-          variable_1: "{{ var1 }}"
-          variable_2: "{{ var2 }}"
-          operator: "common_divisor"
-          say_template: "The solution is {{ solution }}"
+
 ```
 
 
